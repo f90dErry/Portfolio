@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaCode, FaBars } from 'react-icons/fa'
+import { FaCode, FaBars, FaTimes } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import MobileNavbar from './MobileNavbar'
@@ -49,7 +49,11 @@ function Navbar({ title }) {
           </div>
         </div>
         <button onClick={toggleMenu}>
-          <FaBars className='pr-2 text-3xl text-white md:hidden' />
+          {isMenuOpen ? (
+            <FaTimes className='pr-2 text-3xl text-white md:hidden' />
+          ) : (
+            <FaBars className='pr-2 text-3xl text-white md:hidden' />
+          )}
         </button>
         {/* show mobile navbar */}
 
